@@ -1,0 +1,114 @@
+$qora: #222;
+$tvalue: all 0.3s ease-in-out;
+$oq: #ffffff;
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: $qora;
+    padding-bottom: 50px;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.nav {
+    position: fixed;
+    background-color: $qora;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: $tvalue;
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+        transition: $tvalue;
+    }
+    a {
+        color: $oq;
+        text-decoration: none;
+        padding: 7px 15px;
+        transition: $tvalue;
+        
+    }
+    a.current, a:hover {
+        $oq: red;
+        color: $oq;
+        
+    }
+    
+    ul {
+        display: flex;
+        list-style-type: none;
+        align-items: center;
+        justify-content: center;
+    }
+}
+nav.active .container {
+    padding: 10px 0;
+}
+nav.active {
+    background-color: #fff;
+
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    a {
+        color: $qora;
+    }
+}
+
+.hero {
+    background: {
+    image: url('https://images.pexels.com/photos/450035/pexels-photo-450035.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    repeat: no-repeat;
+    size: cover;
+    position: bottom center;
+    }
+    height: 100vh;
+    color: $oq;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    margin-bottom: 20px;
+    z-index: -2;
+
+    
+    h1 {
+        font-size: 46px;
+        margin: -20px 0 20px;
+    }
+    p {
+    font-size: 20px;
+    letter-spacing: 1px;
+    }
+}
+.hero::before{
+    $qora: rgba(0, 0, 0, 0.5);
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $qora;
+    z-index: -1;
+}
+.content{
+    h2,h3{
+        font-size: 150%;
+        margin: 20px 0;
+    }
+    p {
+        color: #555;
+        line-height: 30px;
+        letter-spacing: 1.2px;
+    }
+}
